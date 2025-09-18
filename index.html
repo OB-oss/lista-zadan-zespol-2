@@ -3,24 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lista Zadań</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Lista zadań</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js"></script>
   </head>
   <body>
-    <div class="container">
-      <h1>Moja Lista Zadań</h1>
-      <form id="task-form">
-        <input
-          type="text"
-          id="task-input"
-          placeholder="Dodaj nowe zadanie..."
-          required
-        />
-        <button type="submit">Dodaj</button>
-      </form>
-      <ul id="task-list"></ul>
-    </div>
+    <!-- particles.js container -->
+    <div id="particles-js"></div>
+    <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="bg/style.css" />
+    <script src="bg/script.js"></script>
 
-    <script src="script.js"></script>
+    <main>
+      <nav>
+        <section id="inputText">
+          <!-- <span class="text-center"></span> -->
+          <div class="input-container">
+            <input type="text" required=""/>
+            <label>Full Name</label>
+          </div>
+        </section>
+        <section id="inputButton">
+          <button onclick="add()"><span>Dodaj</span></button>
+        </section>
+      </nav>
+      <hr>
+    </main>
   </body>
 </html>
