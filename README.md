@@ -53,7 +53,7 @@ Projekt korzysta z:
 
 1. Pobierz repozytorium:  
    ```bash
-   git clone https://github.com/TwojNick/lista-zadan.git
+   git clone https://github.com/OB-oss/lista-zadan-zespol-2.git
    cd lista-zadan
    ```
 
@@ -76,7 +76,7 @@ Możliwe kierunki rozbudowy:
 
 ## 👨‍💻 Autor  
 
-Projekt stworzony przez **[Twoje Imię](https://github.com/TwojNick)**.  
+Projekt stworzony przez **[Oskara Bachanek](https://github.com/OB-oss)**.  
 Inspiracja: klasyczne aplikacje typu To-Do.  
 
 ---
