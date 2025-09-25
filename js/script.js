@@ -11,7 +11,7 @@ $(document).ready(function () {
     function () {
       $(this).children(".elementControls").stop(true, true);
       $(this).children(".elementControls").fadeIn(0);
-      $(this).children(".elementControls").animate({ height: "20px" }, 250);
+      $(this).children(".elementControls").animate({ height: "50px" }, 250);
     },
     function () {
       $(this).children(".elementControls").stop(true, true);
@@ -23,33 +23,37 @@ $(document).ready(function () {
     $(this).parent().parent().fadeOut(1000);
     // $(this).fadeOut(0)
   });
+
   $("#inputButton").click(function () {
-    console.log($("#inputTask").val());
-    $("article").append(
-      `
-      
-      
-      <div class="elementCard">
-          <div class="elementContent">` +
-        $("#inputTask").val() +
-        `</div>
-          <div class="elementControls">
-            <button class="elementDelete">delete</button>
-            <button class="elementUp">up</button>
-            <button class="elementDown">down</button>
+    if ($("#inputTask").val() != "") {
+      console.log($("#inputTask").val());
+      $("article").append(
+        `
+        
+        
+        <div class="elementCard">
+            <div class="elementContent">` +
+          $("#inputTask").val() +
+          `</div>
+            <div class="elementControls">
+              <button class="elementDelete"><img src="img/bin.png" alt="bin"></button>
+              <div></div>
+              <button class="elementUp"><img src="img/up_arrow.png" alt="up"></button>
+              <button class="elementDown"><img src="img/down_arrow.png" alt="down"></button>
+            </div>
           </div>
-        </div>
-      
-      
-      `
-    );
-    $("#inputTask").val("");
+        
+        
+        `
+      );
+      $("#inputTask").val("");
+    }
 
     $(".elementCard").hover(
       function () {
         $(this).children(".elementControls").stop(true, true);
         $(this).children(".elementControls").fadeIn(0);
-        $(this).children(".elementControls").animate({ height: "20px" }, 250);
+        $(this).children(".elementControls").animate({ height: "50px" }, 250);
       },
       function () {
         $(this).children(".elementControls").stop(true, true);
@@ -62,7 +66,8 @@ $(document).ready(function () {
       $(this).parent().parent().fadeOut(1000);
       // $(this).fadeOut(0)
     });
-
+    $(".elementUp").unbind("click");
+    $(".elementDown").unbind("click");
     $(".elementUp").click(function () {
       let current = $(this).parent().parent();
       console.log(current);
@@ -74,15 +79,15 @@ $(document).ready(function () {
       }
     });
     $(".elementDown").click(function () {
-    let current = $(this).parent().parent();
-    console.log(current);
-    let prev = current.next("div"); // paragraf powyżej
+      let current = $(this).parent().parent();
+      console.log(current);
+      let prev = current.next("div"); // paragraf powyżej
 
-    if (prev.length) {
-      // jeśli istnieje paragraf powyżej
-      current.insertAfter(prev);
-    }
-  });
+      if (prev.length) {
+        // jeśli istnieje paragraf powyżej
+        current.insertAfter(prev);
+      }
+    });
   });
 
   $(".elementUp").click(function () {
