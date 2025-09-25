@@ -12,6 +12,8 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 1vw;
+    display: flex;
+    flex-direction: column;
 }
 
 * {
@@ -55,7 +57,7 @@ nav{
 	left:0px;
 	font-size:16px;
 	color:#fff;	
-    pointer-event: none;
+    pointer-events: none;
 	transition: all 0.5s ease-in-out;
 }
 .input-container input{ 
@@ -91,7 +93,7 @@ nav{
 	font-size:12px;
 	
 }
-button {
+#inputButton button {
  outline: none;
  cursor: pointer;
  border: none;
@@ -111,18 +113,18 @@ button {
  width: 100%;
 }
 
-button span {
+#inputButton button span {
  position: relative;
  z-index: 10;
  transition: color 0.4s;
 }
 
-button:hover span {
+#inputButton button:hover span {
  color: white;
 }
 
-button::before,
-button::after {
+#inputButton button::before,
+#inputButton button::after {
  position: absolute;
  top: 0;
  left: 0;
@@ -131,7 +133,7 @@ button::after {
  z-index: 0;
 }
 
-button::before {
+#inputButton button::before {
  content: "";
  background: var(--buttonColor);
  width: 120%;
@@ -140,9 +142,26 @@ button::before {
  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
 }
 
-button:hover::before {
+#inputButton button:hover::before {
  transform: translate3d(100%, 0, 0);
 }
 hr{
     border: 1px solid #fff;
+    width: 100%;
+}
+article{
+    width: 100%;
+    height: 100%;
+}
+.elementCard{
+    width: calc(100%-40px);
+    padding: 10px;
+    margin: 10px;
+    border: 4px solid white;
+    border-radius: 10px;
+}
+.elementControls{
+    height: 0;
+    display: none;
+    margin-top: 10px;
 }
